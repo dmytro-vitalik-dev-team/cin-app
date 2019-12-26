@@ -16,7 +16,7 @@ export class MoviesComponent implements OnInit {
     private movieService: MovieService,
     private route: ActivatedRoute
   ) { }
-  
+
   ngOnInit() {
     this.getMovies();
 
@@ -35,5 +35,12 @@ export class MoviesComponent implements OnInit {
     this.movieService.getMovies().subscribe(res => {
       this.movies = res.data;
     }, error => console.error(error));
+  }
+
+  nextMovie(next: boolean){
+    console.log(next)
+    let el = document.getElementsByClassName("carousel-inner")
+    next ? el[0].scrollLeft += 375 : el[0].scrollLeft -= 375
+
   }
 }
