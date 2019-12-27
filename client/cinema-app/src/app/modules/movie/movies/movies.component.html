@@ -1,8 +1,49 @@
-<mat-card class="example-card">
+<!-- <mat-card class="example-card">
   <div>
     <img mat-card-image src="https://multiplex.ua/images/58/35/583593441a8af5accb5585d608ca003b.jpeg" alt="Photo of a Shiba Inu">
     <img mat-card-image src="https://multiplex.ua/images/ec/3b/ec3b1e5e537bbd8d109c9b750131c063.jpeg" alt="Photo of a Shiba Inu">
     <img mat-card-image src="https://multiplex.ua/images/9c/5d/9c5d20945ab1509a7bd67232c261fa41.jpeg" alt="Photo of a Shiba Inu">
     <img mat-card-image src="https://multiplex.ua/images/85/a8/85a8858c84aeeef9a2d13477193512b0.jpeg" alt="Photo of a Shiba Inu">
   </div>
-</mat-card>
+</mat-card> -->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner d-flex flex-row">
+    <div class="carousel-movie">
+      <img src="https://multiplex.ua/images/85/a8/85a8858c84aeeef9a2d13477193512b0.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-movie">
+      <img src="https://multiplex.ua/images/9c/5d/9c5d20945ab1509a7bd67232c261fa41.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-movie">
+      <img src="https://multiplex.ua/images/58/35/583593441a8af5accb5585d608ca003b.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-movie">
+      <img src="https://multiplex.ua/images/ec/3b/ec3b1e5e537bbd8d109c9b750131c063.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-movie">
+      <img src="https://multiplex.ua/images/85/a8/85a8858c84aeeef9a2d13477193512b0.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-movie">
+      <img src="https://multiplex.ua/images/9c/5d/9c5d20945ab1509a7bd67232c261fa41.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-movie">
+      <img src="https://multiplex.ua/images/ec/3b/ec3b1e5e537bbd8d109c9b750131c063.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-movie">
+      <img src="https://multiplex.ua/images/85/a8/85a8858c84aeeef9a2d13477193512b0.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-movie">
+      <img src="https://multiplex.ua/images/9c/5d/9c5d20945ab1509a7bd67232c261fa41.jpeg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a (click)="nextMovie(false)" class="carousel-control-prev" role="button"
+    data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a (click)="nextMovie(true)" class="carousel-control-next" role="button"
+    data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

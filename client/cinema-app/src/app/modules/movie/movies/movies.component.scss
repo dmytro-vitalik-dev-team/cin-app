@@ -1,6 +1,20 @@
-.mat-card-image {
-    width: 26%;
+// .mat-card-image {
+//     width: 26%;
+// }
+// .mat-card {
+//     padding: 0px;
+// }
+
+
+.carousel-item{
+  display: block;
 }
-.mat-card {
-    padding: 0px;
+.carousel-movie img{
+  height: 100vh;
+  min-width: 376px;
+  object-fit: cover;
+}
+.carousel-inner{
+  overflow-x: scroll;
+  // overflow: hidden;
 }
