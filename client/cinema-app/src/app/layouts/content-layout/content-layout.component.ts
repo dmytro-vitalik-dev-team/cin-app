@@ -13,14 +13,8 @@ export class ContentLayoutComponent implements OnInit {
     mode:string = 'side';
     open = 'true';
     title = 'Logo title';
-    navList: NavList[];
 
-    constructor(public ngZone: NgZone, public route: Router)
-    {
-        this.navList = [
-            { categoryName: 'Скоро у прокаті' },
-            { categoryName: 'Увійти' }
-        ];
+    constructor(public ngZone: NgZone, public route: Router){
         this.changeMode();
         window.onresize = (e) => {
             ngZone.run(() => {
@@ -30,7 +24,6 @@ export class ContentLayoutComponent implements OnInit {
     }
 
     ngOnInit() {
-
     }
 
     changeMode() {
@@ -46,18 +39,7 @@ export class ContentLayoutComponent implements OnInit {
         }
     }
 
-}
-
-export class NavList {
-    categoryName: string;
-    constructor(_categoryName:string) {
-        this.categoryName = _categoryName;  
+    login() {
+        this.route.navigate(['/auth/login']);
     }
-}
-
-export class NavListItem {
-    subCategoryName: string;
-    subCategoryLink: string;
-    subCategoryQuery?: any;
-    visable: boolean;
 }

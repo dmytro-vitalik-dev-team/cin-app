@@ -14,12 +14,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/material.module';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfirmDialogComponent,
-    ContentLayoutComponent
+    ContentLayoutComponent,
+    AuthLayoutComponent
   ],
   imports: [
     CommonModule,
