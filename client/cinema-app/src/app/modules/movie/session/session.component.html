@@ -1,0 +1,32 @@
+<div class="sessions-page d-flex">
+  <div class="chenged-movie">
+    <movie-bunner [movie]="movie"></movie-bunner>
+  </div>
+
+  <div class="map-places">
+    <div class="cinema-screen">Екран</div>
+    <div *ngFor="let row of sessionPlace" class="row-places d-flex">
+      <div class="row-namber">{{row.row}} ряд</div>
+      <div *ngFor="let place of row.rowPlace" [ngClass]="{'blocked' : place.blocked}" class="place">{{place.place}}</div>
+      <div class="row-price">{{row.rowPrice}} грн.</div>
+    </div>
+  </div>
+
+  <div class="gal-container">
+    <div class="selected-place-wrapper">
+      <div class="selected-places">
+        <div class="selected-place">
+          <div>3 ряд</div>
+          <div>6 місце </div>
+          <div>55 грн.</div>
+          <button>+</button>
+        </div>
+      </div>
+      <div class="selected-place-total">
+        <div>Всього до сплати: 100 грн.</div>
+        <button>Продовжити</button>
+      </div>
+    </div>
+  </div>
+
+</div>

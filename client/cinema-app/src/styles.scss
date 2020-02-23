@@ -6,3 +6,9 @@ $accent:  mat-palette($mat-light-blue, 600, 100, 800);
 $warn:    mat-palette($mat-amber, 600);
 $theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
+
+.gal-container{
+  min-width: 376px;
+  max-width: 376px;
+  width: 376px;
+}

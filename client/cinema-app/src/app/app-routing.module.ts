@@ -4,21 +4,26 @@ import { ContentLayoutComponent } from './layouts/content-layout/content-layout.
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
 export const AppRoutes: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     redirectTo: 'auth/login',
     pathMatch: 'full'
   },
-  { 
+  {
     path: 'auth',
     component: AuthLayoutComponent,
     loadChildren: './modules/authentication/authentication.module#AuthenticationModule'
   },
-  { 
+  {
     path: 'movie',
     component: ContentLayoutComponent,
     loadChildren: './modules/movie/movie.module#MovieModule'
   },
+  // {
+  //   path: 'movie/session',
+  //   component: ContentLayoutComponent,
+  //   loadChildren: './modules/movie/movie.module#SessionComponent'
+  // },
   { path: '**', redirectTo: '/auth/login', pathMatch:'full' }
 ];
 
