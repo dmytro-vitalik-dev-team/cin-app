@@ -1,0 +1,59 @@
+.chenged-movie {
+  max-width: 376px;
+}
+
+.map-places {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  & .row-price,
+  & .row-namber,
+  & .place {
+    height: 40px;
+    margin: 5px;
+    color: #ffffff;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+  }
+
+  & .row-price,
+  & .row-namber {
+
+    min-width: 80px;
+    background: darkslateblue;
+  }
+
+  & .place {
+    // height: 40px;
+    width: 40px;
+    background: orangered;
+    cursor: pointer;
+    &:hover {
+      background: #d03901;
+    }
+    &.blocked{
+      background: rgb(177, 177, 177);
+      cursor: unset;
+    }
+  }
+}
+
+.selected-place-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgb(236, 236, 236);
+  padding: 20px;
+  height: 100%;
+  & .selected-place{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

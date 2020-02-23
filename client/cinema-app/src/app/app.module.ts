@@ -15,13 +15,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/material.module';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+// import { SessionComponent } from './modules/movie/session/session.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfirmDialogComponent,
     ContentLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    // SessionComponent
   ],
   imports: [
     CommonModule,

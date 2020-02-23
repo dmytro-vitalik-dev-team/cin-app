@@ -1,20 +1,26 @@
-// .mat-card-image {
-//     width: 26%;
-// }
-// .mat-card {
-//     padding: 0px;
-// }
-
-
-.carousel-item{
+.carousel-item {
   display: block;
 }
-.carousel-movie img{
-  height: 100vh;
-  min-width: 376px;
-  object-fit: cover;
+.carousel{
+  display: flex;
+  flex-direction: row;
 }
-.carousel-inner{
+.slider-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #221f1f;
+  & a{
+    background: #ff4242;
+    padding: 15px;
+  }
+}
+.carousel-control-next, .carousel-control-prev{
+  position: unset;
+}
+.carousel-inner {
   overflow-x: scroll;
-  // overflow: hidden;
+}
+::-webkit-scrollbar {
+  display: none;
 }
