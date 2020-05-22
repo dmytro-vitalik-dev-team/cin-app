@@ -24,6 +24,8 @@ export class MoviesComponent implements OnInit {
   ];
   title = 'Landing page';
 
+  disableSlideBtn = false;
+  
   constructor(
     private movieService: MovieService,
     private route: ActivatedRoute
@@ -50,9 +52,13 @@ export class MoviesComponent implements OnInit {
   }
 
   nextMovie(next: boolean) {
-    console.log(next)
-    let el = document.getElementsByClassName("carousel-inner")
-    next ? el[0].scrollLeft += 375 : el[0].scrollLeft -= 375
-
+    if(!this.disableSlideBtn){
+      this.disableSlideBtn = true;
+      let el = document.getElementsByClassName("carousel-inner")
+      next ? el[0].scrollLeft += 376 : el[0].scrollLeft -= 376
+      setTimeout(() => {
+        this.disableSlideBtn = false;
+      },300)
+    }
   }
 }

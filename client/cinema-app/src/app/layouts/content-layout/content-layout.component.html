@@ -1,125 +1,124 @@
 <mat-toolbar color="primary" class="main-nav mat-elevation-z4">
 
-    <button mat-icon-button (click)="start.toggle()" class="icon-padding">
-        <mat-icon aria-hidden="true">menu</mat-icon>
-    </button>
-    <button mat-button routerLink="/"><strong>{{title}}</strong></button>
+  <button mat-icon-button (click)="start.toggle()" class="icon-padding">
+    <mat-icon aria-hidden="true">menu</mat-icon>
+  </button>
+  <button mat-button routerLink="/"><strong>{{title}}</strong></button>
 
-    <!-- This fills the remaining space of the current row -->
-    <span class="fill-remaining-space"></span>
+  <!-- This fills the remaining space of the current row -->
+  <span class="fill-remaining-space"></span>
 </mat-toolbar>
-
 <mat-sidenav-container class="sidenav-container">
- 
-    
-    <mat-sidenav class="mat-elevation-z10" #start [opened]="open" fixedTopGap="64" [mode]="mode" fixedInViewport="true" style="width:240px;">
+  <mat-sidenav class="mat-elevation-z10" #start [opened]="open" fixedTopGap="64" [mode]="mode" fixedInViewport="true" style="width:240px;">
+    <div class="area"></div>
+    <nav class="main-menu">
+      <ul>
+        <li>
+          <a href="http://justinfarrow.com">
+            <i class="fa fa-home fa-2x"></i>
+            <span class="nav-text">
+              Dashboard
+            </span>
+          </a>
 
-         
-    <div class="area"></div><nav class="main-menu">
-        <ul>
-            <li>
-                <a href="http://justinfarrow.com">
-                    <i class="fa fa-home fa-2x"></i>
-                    <span class="nav-text">
-                        Dashboard
-                    </span>
-                </a>
-              
-            </li>
-            <li class="has-subnav">
-                <a href="#">
-                    <i class="fa fa-laptop fa-2x"></i>
-                    <span class="nav-text">
-                        Stars Components
-                    </span>
-                </a>
-                
-            </li>
-            <li class="has-subnav">
-                <a href="#">
-                   <i class="fa fa-list fa-2x"></i>
-                    <span class="nav-text">
-                        Forms
-                    </span>
-                </a>
-                
-            </li>
-            <li class="has-subnav">
-                <a href="#">
-                   <i class="fa fa-folder-open fa-2x"></i>
-                    <span class="nav-text">
-                        Pages
-                    </span>
-                </a>
-               
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-bar-chart-o fa-2x"></i>
-                    <span class="nav-text">
-                        Graphs and Statistics
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-font fa-2x"></i>
-                    <span class="nav-text">
-                       Quotes
-                    </span>
-                </a>
-            </li>
-            <li>
-               <a href="#">
-                   <i class="fa fa-table fa-2x"></i>
-                    <span class="nav-text">
-                        Tables
-                    </span>
-                </a>
-            </li>
-            <li>
-               <a href="#">
-                    <i class="fa fa-map-marker fa-2x"></i>
-                    <span class="nav-text">
-                        Maps
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                   <i class="fa fa-info fa-2x"></i>
-                    <span class="nav-text">
-                        Documentation
-                    </span>
-                </a>
-            </li>
-        </ul>
+        </li>
+        <li class="has-subnav">
+          <a href="#">
+            <i class="fa fa-laptop fa-2x"></i>
+            <span class="nav-text">
+              Stars Components
+            </span>
+          </a>
+        </li>
+        <li class="has-subnav">
+          <a href="#">
+            <i class="fa fa-list fa-2x"></i>
+            <span class="nav-text">
+              Forms
+            </span>
+          </a>
 
-        <ul class="logout">
-            <li>
-               <a href="#">
-                    <i class="fa fa-power-off fa-2x"></i>
-                    <span class="nav-text" (click)="login()">
-                        Login
-                    </span>
-                </a>
-            </li>  
-        </ul>
+        </li>
+        <li class="has-subnav">
+          <a href="#">
+            <i class="fa fa-folder-open fa-2x"></i>
+            <span class="nav-text">
+              Pages
+            </span>
+          </a>
+
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-bar-chart-o fa-2x"></i>
+            <span class="nav-text">
+              Graphs and Statistics
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-font fa-2x"></i>
+            <span class="nav-text">
+              Quotes
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-table fa-2x"></i>
+            <span class="nav-text">
+              Tables
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-map-marker fa-2x"></i>
+            <span class="nav-text">
+              Maps
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-info fa-2x"></i>
+            <span class="nav-text">
+              Documentation
+            </span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="logout">
+        <li>
+          <a href="#">
+            <i class="fa fa-power-off fa-2x"></i>
+            <span class="nav-text" (click)="login()">
+              Login
+            </span>
+          </a>
+        </li>
+      </ul>
     </nav>
-
-    </mat-sidenav>
-
-    <mat-sidenav-content style="margin-top:64px;">
-        <div>
-            <router-outlet></router-outlet>
-        </div>
-        <div style="height: 64px;"></div>
-    </mat-sidenav-content>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: calc(100% - 64px); margin-top:64px;">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- <div style="height: 64px;"></div> -->
+  </mat-sidenav-content>
 </mat-sidenav-container>
 
 
 <mat-menu x-position="before" #menu="matMenu">
-    <button mat-menu-item routerLink="/profile"><mat-icon aria-hidden="true">settings</mat-icon>Settings</button>
-    <button mat-menu-item routerLink="/profile"><mat-icon aria-hidden="true">account_box</mat-icon>Profile</button>
-    <button mat-menu-item routerLink="/profile"><mat-icon aria-hidden="true">exit_to_app</mat-icon>Sign out</button>
+  <button mat-menu-item routerLink="/profile">
+    <mat-icon aria-hidden="true">settings</mat-icon>Settings
+  </button>
+  <button mat-menu-item routerLink="/profile">
+    <mat-icon aria-hidden="true">account_box</mat-icon>Profile
+  </button>
+  <button mat-menu-item routerLink="/profile">
+    <mat-icon aria-hidden="true">exit_to_app</mat-icon>Sign out
+  </button>
 </mat-menu>
