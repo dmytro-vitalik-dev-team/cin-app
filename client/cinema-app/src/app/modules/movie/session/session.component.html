@@ -1,31 +1,59 @@
-<div class="sessions-page d-flex">
-  <div class="chenged-movie">
+<div class="sessions-page d-flex flex-md-nowrap flex-wrap mx-auto">
+  <div class="selected-movie order-md-1 order-2">
     <movie-bunner [movie]="movie"></movie-bunner>
   </div>
 
-  <div class="map-places">
+  <div *ngIf="!isNextStep" class="map-places order-md-2 order-1">
     <div class="cinema-screen">Екран</div>
     <div *ngFor="let row of sessionPlace" class="row-places d-flex">
-      <div class="row-namber">{{row.row}} ряд</div>
-      <div *ngFor="let place of row.rowPlace" [ngClass]="{'blocked' : place.blocked}" class="place">{{place.place}}</div>
-      <div class="row-price">{{row.rowPrice}} грн.</div>
+      <div class="row-namber">{{row.number}} ряд</div>
+      <!-- <div *ngFor="let place of row.rowPlace" >{{place.place}}</div> -->
+      <div *ngFor="let place of row.places" [ngClass]="{'sales' : place.isSales, 'selected' : place.idSelected}" (click)="togglePlase({rowNumber: row.number, place: place})" class="place">
+        <div *ngIf="!place.isSales; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock >{{place.number}}</ng-template>
+        <ng-template #elseBlock><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEycHgiIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNDQ4LDQ0OGMwLDAsMC0yNi40LTIuMi00MC4yYy0xLjgtMTAuOS0xNi45LTI1LjMtODEuMS00OC45Yy02My4yLTIzLjItNTkuMy0xMS45LTU5LjMtNTQuNmMwLTI3LjcsMTQuMS0xMS42LDIzLjEtNjQuMiAgYzMuNS0yMC43LDYuMy02LjksMTMuOS00MC4xYzQtMTcuNC0yLjctMTguNy0xLjktMjdjMC44LTguMywxLjYtMTUuNywzLjEtMzIuN0MzNDUuNCwxMTkuMywzMjUuOSw2NCwyNTYsNjQgIGMtNjkuOSwwLTg5LjQsNTUuMy04Ny41LDc2LjRjMS41LDE2LjksMi4zLDI0LjQsMy4xLDMyLjdjMC44LDguMy01LjksOS42LTEuOSwyN2M3LjYsMzMuMSwxMC40LDE5LjMsMTMuOSw0MC4xICBjOSw1Mi42LDIzLjEsMzYuNSwyMy4xLDY0LjJjMCw0Mi44LDMuOSwzMS41LTU5LjMsNTQuNmMtNjQuMiwyMy41LTc5LjQsMzgtODEuMSw0OC45QzY0LDQyMS42LDY0LDQ0OCw2NCw0NDhoMTkySDQ0OHoiLz48L3N2Zz4=" width="30" height="30" alt=""></ng-template>
+      </div>
+      <div class="row-price">{{row.price}} грн.</div>
     </div>
   </div>
 
-  <div class="gal-container">
-    <div class="selected-place-wrapper">
+  <div class="gal-container selected-place__container order-3">
+    <div class="selected-place__wrapper">
       <div class="selected-places">
-        <div class="selected-place">
-          <div>3 ряд</div>
-          <div>6 місце </div>
-          <div>55 грн.</div>
-          <button>+</button>
+        <div class="selected-places__header">
+          <div class="selected-places__title">Квитки</div>
+          <div class="selected-places__count">{{selectedPlaces.places.length}} квиток (-a/-ів)</div>
         </div>
+        <!-- <div class="selected-places__overflow"> -->
+          <div *ngFor="let selectedPlace of selectedPlaces.places" class="selected-place">
+            <div class="selected-place__row">{{selectedPlace.rowNumber}} ряд</div>
+            <div class="selected-place__place">{{selectedPlace.place.number}} місце </div>
+            <div class="selected-place__price">{{selectedPlace.place.price}} грн.</div>
+            <button *ngIf="!isNextStep" class="selected-place__remove" (click)="onRemoveSelectedPlace(selectedPlace.place)" >&times;</button>
+          </div>
+        <!-- </div> -->
       </div>
-      <div class="selected-place-total">
-        <div>Всього до сплати: 100 грн.</div>
-        <button>Продовжити</button>
+      <div class="selected-place-total-block">
+        <div *ngIf="!isNextStep" class="selected-place__total">Всього до сплати: <span>{{selectedPlaces.getTotalPrice()}} грн.</span></div>
+        <div *ngIf="isNextStep" class="selected-place__total text-center">Щоб змінити обранні місця поверніться на крок назад.</div>
+        <button *ngIf="!isNextStep" class="selected-place__next" (click)="toNextStep()">Продовжити</button>
+        <button *ngIf="isNextStep" class="selected-place__next" (click)="toBackStep()">Назад</button>
       </div>
+    </div>
+  </div>
+
+  <div *ngIf="isNextStep" class="order-list order-2">
+    <!-- <div class="order-list__movie">Фільм: {{movie.name}}</div> -->
+    <!-- <div class="order-list__session">Давта та час: Сьогодні о 13:00</div> -->
+    <div class="order-list__wrapper"> 
+      <div class="order-list__count">Ви обрали {{selectedPlaces.places.length}} квиток (-a/-ів) на фільм <span>{{movie.name}}</span>, <br> показ якого пичнеться сьогодні о 13:00.</div>
+    <!-- <div class="order-list__count">Ви обрали {{selectedPlaces.places.length}} квиток (-a/-ів).</div> -->
+    <div class="order-list__total">Загальна сума до сплати всього {{selectedPlaces.getTotalPrice()}} грн.</div>
+    <div class="order-list__form">
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="some@gmail.com">
+      <button class="mx-auto">Перейти до оплати</button>
+    </div>
     </div>
   </div>
 

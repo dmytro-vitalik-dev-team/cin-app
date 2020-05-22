@@ -12,13 +12,18 @@ export const AppRoutes: Routes = [
   {
     path: 'auth',
     component: AuthLayoutComponent,
-    loadChildren: './modules/authentication/authentication.module#AuthenticationModule'
+    loadChildren: () => import('./modules/authentication/authentication.module').then(m => m.AuthenticationModule)
   },
   {
     path: 'movie',
     component: ContentLayoutComponent,
-    loadChildren: './modules/movie/movie.module#MovieModule'
+    loadChildren: () => import('./modules/movie/movie.module').then(m => m.MovieModule)
   },
+  // {
+  //   path: 'soon-in-cinema',
+  //   component: ContentLayoutComponent,
+  //   loadChildren: () => import('./modules/soon-in-cinema/soon-in-cinema.module').then(m => m.SoonInCinemaModule)
+  // },
   // {
   //   path: 'movie/session',
   //   component: ContentLayoutComponent,

@@ -2,7 +2,8 @@
   position: relative;
   transition: .5s all;
   & img{
-    height: 100vh;
+    height: calc(100vh - 64px);
+    // height: fit-content;
     min-width: 376px;
     object-fit: cover;
   }
