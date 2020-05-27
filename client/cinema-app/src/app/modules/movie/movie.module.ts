@@ -5,6 +5,7 @@ import { MovieRoutingModule } from './movie-routing.module';
 import { MaterialModule } from 'src/app/shared/material.module';
 import { SessionComponent } from './session/session.component';
 import { MovieBunnerComponent } from './movie-bunner/movie-bunner.component';
+import { BunnerModule } from 'src/app/shared/bunner/bunner.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MovieBunnerComponent } from './movie-bunner/movie-bunner.component';
   imports: [
     CommonModule,
     MaterialModule,
-    MovieRoutingModule
+    MovieRoutingModule,
+    BunnerModule
   ],
   // exports: [
   //   MovieBunnerComponent

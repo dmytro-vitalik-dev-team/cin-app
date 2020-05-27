@@ -19,11 +19,11 @@ export const AppRoutes: Routes = [
     component: ContentLayoutComponent,
     loadChildren: () => import('./modules/movie/movie.module').then(m => m.MovieModule)
   },
-  // {
-  //   path: 'soon-in-cinema',
-  //   component: ContentLayoutComponent,
-  //   loadChildren: () => import('./modules/soon-in-cinema/soon-in-cinema.module').then(m => m.SoonInCinemaModule)
-  // },
+  {
+    path: 'soon-in-cinema',
+    component: ContentLayoutComponent,
+    loadChildren: () => import('./modules/soon-in-cinema/soon-in-cinema.module').then(m => m.SoonInCinemaModule)
+  },
   // {
   //   path: 'movie/session',
   //   component: ContentLayoutComponent,

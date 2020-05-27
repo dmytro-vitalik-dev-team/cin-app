@@ -1,0 +1,6 @@
+<div class="soon-in-cinema d-flex flex-row flex-wrap">
+  <div *ngFor="let movie of soonMovies" class="movie" [ngStyle]="{'background-image': 'url(' + movie.imgUrl + ')'}" >
+    <div class="movie__name">{{movie.name}}</div>
+    <div class="movie__date">{{movie.date}}</div>
+  </div>
+</div>

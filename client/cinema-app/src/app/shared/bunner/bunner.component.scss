@@ -1,0 +1,67 @@
+.carousel-movie {
+  position: relative;
+  transition: .5s all;
+  & img{
+    height: calc(100vh - 64px);
+    // height: fit-content;
+    min-width: 376px;
+    object-fit: cover;
+  }
+  &:hover img{
+    filter: blur(5px);
+  }
+  &:hover .sessions-wrapper{
+    background: #0000008a;
+  }
+}
+
+
+
+.sessions-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 20;
+  transition: .5s all;
+}
+
+.movie-name {
+  text-align: center;
+  font-size: 32px;
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0px 0px 8px #959595;
+  padding: 30px 10px;
+}
+
+.sessions-info{
+  padding: 10px;
+  text-align: center;
+  display: none;
+  .carousel-movie:hover &{
+    display: block;
+  }
+  &__day{
+    font-weight: 600;
+    font-size: 26px;
+    color: #ff4242;
+  }
+  &__times{
+    padding: 10px;
+  }
+  &__time{
+    margin: 5px;
+    padding: 9px;
+    background: #ff4242;
+    border-radius: 7px;
+    color: #ffffff;
+    transition: .5s all;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover{
+      color: #ff4242;
+      background: #ffffff;
+      box-shadow: 0px 5px 8px 3px #2d2d2d;
+    }
+  }
+}

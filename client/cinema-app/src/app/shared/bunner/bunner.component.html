@@ -1,0 +1,26 @@
+<div class="carousel-movie">
+  <div class="sessions-wrapper">
+    <div class="movie-name">{{movie.name}}</div>
+    <div class="sessions-info">
+      <div class="sessions-info__day">Сьогодні</div>
+      <div class="sessions-info__times d-flex flex-wrap">
+        <div class="sessions-info__time" (click)="getSession(1)">13:00</div>
+        <div class="sessions-info__time">13:00</div>
+        <div class="sessions-info__time">13:00</div>
+        <div class="sessions-info__time">13:00</div>
+        <div class="sessions-info__time">13:00</div>
+        <div class="sessions-info__time">13:00</div>
+      </div>
+      <div class="sessions-info__day">Завтра</div>
+      <div class="sessions-info__times d-flex flex-wrap">
+        <div class="sessions-info__time">13:00</div>
+        <div class="sessions-info__time">13:00</div>
+        <div class="sessions-info__time">13:00</div>
+        <div class="sessions-info__time">13:00</div>
+        <div class="sessions-info__time">13:00</div>
+        <div class="sessions-info__time">13:00</div>
+      </div>
+    </div>
+  </div>
+  <img [src]="movie.imgUrl" class="d-block w-100" [alt]="movie.name">
+</div>

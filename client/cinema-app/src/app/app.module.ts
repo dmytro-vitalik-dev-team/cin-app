@@ -15,13 +15,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/material.module';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { BunnerModule } from './shared/bunner/bunner.module';
+import { SoonInCinemaModule } from './modules/soon-in-cinema/soon-in-cinema.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConfirmDialogComponent,
     ContentLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,9 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
     FooterModule,
     MaterialModule,
     RouterModule.forRoot(AppRoutes),
-    AppRoutingModule
+    AppRoutingModule,
+    BunnerModule,
+    SoonInCinemaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
