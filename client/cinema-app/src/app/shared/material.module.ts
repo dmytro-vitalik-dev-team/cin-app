@@ -5,6 +5,7 @@ import {
   MatExpansionModule, MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatProgressBarModule, MatSelectModule,
   MatSidenavModule, MatSnackBarModule, MatStepperModule, MatTableModule, MatToolbarModule, MatTooltipModule, MatTabsModule, MatProgressSpinnerModule, MatSlideToggleModule, MatDividerModule, MatSliderModule, MatSortModule, MatTreeModule } from '@angular/material';
 import { CdkTreeModule } from '@angular/cdk/tree';
+// import { BunnerComponent } from './bunner/bunner.component';
 
 @NgModule({
   imports: [
@@ -107,6 +108,7 @@ import { CdkTreeModule } from '@angular/cdk/tree';
     CommonModule,
     CdkTreeModule,
     MatTreeModule
-  ]
+  ],
+  // declarations: [BunnerComponent]
 })
 export class MaterialModule {}

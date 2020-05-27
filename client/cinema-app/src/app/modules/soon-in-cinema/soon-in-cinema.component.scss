@@ -1,0 +1,40 @@
+.soon-in-cinema{
+  height: calc(100vh - 64px);
+}
+
+.movie{
+  height: 50%;
+  min-width: 300px;
+  box-sizing: border-box;
+  flex: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__name,
+  &__date{
+    font-size: 28px;
+    color: #ffffff;
+    padding: 5px 20px;
+    margin: 10px;
+    border-radius: 7px;
+    transition: .5s all;
+  }
+  &__name{
+    background: #ef4d4d99;
+  }
+  &__date{
+    background: #483d8b99;
+  }
+}
+
+.movie:hover .movie__name{
+  background: #ef4d4d;
+}
+.movie:hover .movie__date{
+  background: #483d8b;
+}
+

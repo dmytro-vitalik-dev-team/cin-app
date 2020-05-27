@@ -6,7 +6,8 @@
     </a>
   </div>
   <div class="carousel-inner d-flex flex-row">
-    <movie-bunner *ngFor="let movie of moviesTmp" [movie]="movie"></movie-bunner>
+    <!-- <movie-bunner *ngFor="let movie of moviesTmp" [movie]="movie"></movie-bunner> -->
+    <app-bunner *ngFor="let movie of moviesTmp" [movie]="movie"></app-bunner>
   </div>
   <div class="slider-btn">
     <a (click)="nextMovie(true)" class="carousel-control-next" role="button" data-slide="next">
